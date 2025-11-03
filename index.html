@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing — Attendance Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="pricing-container">
+    <header class="pricing-header">
+      <div>
+        <h1>Plans for organizations</h1>
+        <p class="subtitle">Flexible pricing for departments, campuses and full institutions. Includes free trial.</p>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Monthly</span>
+        <label class="switch">
+          <input id="billingToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Annual <small class="muted">(save ~18%)</small></span>
+      </div>
+    </header>
+
+    <section class="cards-row">
+      <!-- Starter -->
+      <article class="card">
+        <h3 class="plan-title">Starter</h3>
+        <p class="plan-sub">For small groups & pilot programs</p>
+        <p class="price" id="starter-price">₦15,000<span class="period">/mo</span></p>
+        <ul class="features">
+          <li>Up to 25 users</li>
+          <li>Basic Attendance (manual)</li>
+          <li>7-day audit retention</li>
+          <li>Free subdomain</li>
+          <li>Standard email support</li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn-outline">Start Free Trial</button>
+          <button class="btn-ghost">Contact</button>
+        </div>
+      </article>
+
+      <!-- Standard (featured) -->
+      <article class="card featured">
+        <div class="badge">Most Popular</div>
+        <h3 class="plan-title">Standard</h3>
+        <p class="plan-sub">For growing institutions & departments</p>
+        <p class="price" id="standard-price">₦30,000<span class="period">/mo</span></p>
+        <ul class="features">
+          <li>Up to 100 users</li>
+          <li>Advanced Attendance (QR, Geofence)</li>
+          <li>Reports & Billing module</li>
+          <li>Role & privilege management</li>
+          <li>30-day audit retention</li>
+          <li>Priority support (chat + email)</li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn-primary">Choose Standard</button>
+          <button class="btn-ghost">Demo</button>
+        </div>
+      </article>
+
+      <!-- Pro / Enterprise -->
+      <article class="card pro">
+        <h3 class="plan-title">Pro / Enterprise</h3>
+        <p class="plan-sub">Campus-wide & multi-department solutions</p>
+        <p class="price" id="pro-price">₦55,000<span class="period">/mo</span></p>
+        <ul class="features">
+          <li>Unlimited users</li>
+          <li>All modules & advanced analytics</li>
+          <li>Custom integrations & API access</li>
+          <li>Unlimited audit retention</li>
+          <li>Dedicated success manager & SLA</li>
+          <li>Custom domain & white-label</li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn-secondary" id="contactSales">Contact Sales</button>
+          <button class="btn-ghost">Request Quote</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Feature comparison table -->
+    <section class="comparison">
+      <h2>Feature comparison</h2>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Starter</th>
+              <th>Standard</th>
+              <th>Pro / Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Users</td>
+              <td>Up to 25</td>
+              <td>Up to 100</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Attendance (QR, Geo, Auto)</td>
+              <td>Basic</td>
+              <td>Advanced</td>
+              <td>Advanced + Custom Rules</td>
+            </tr>
+            <tr>
+              <td>Billing & Invoicing</td>
+              <td class="no">—</td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+            </tr>
+            <tr>
+              <td>Reports & Exports</td>
+              <td class="limited">Limited</td>
+              <td class="yes">✔</td>
+              <td class="yes">Advanced</td>
+            </tr>
+            <tr>
+              <td>Role Management</td>
+              <td class="no">—</td>
+              <td class="yes">✔</td>
+              <td class="yes">Granular</td>
+            </tr>
+            <tr>
+              <td>SSO / SAML</td>
+              <td class="no">—</td>
+              <td class="no">—</td>
+              <td class="yes">✔</td>
+            </tr>
+            <tr>
+              <td>API & Integrations</td>
+              <td class="no">—</td>
+              <td class="limited">Limited</td>
+              <td class="yes">Full</td>
+            </tr>
+            <tr>
+              <td>Audit Log Retention</td>
+              <td>7 days</td>
+              <td>30 days</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Support Level</td>
+              <td>Email</td>
+              <td>Priority</td>
+              <td>Dedicated Manager</td>
+            </tr>
+            <tr>
+              <td>Custom Branding</td>
+              <td class="no">—</td>
+              <td class="no">—</td>
+              <td class="yes">✔</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Contact Sales Modal -->
+    <div id="salesModal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <h3>Contact Sales</h3>
+        <p>Tell us about your institution and we'll prepare a custom quote.</p>
+        <form id="salesForm">
+          <label>Organization name<input type="text" name="org" required /></label>
+          <label>Contact name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Phone<input type="tel" name="phone" /></label>
+          <label>Estimated users<input type="number" name="users" min="1" /></label>
+          <label>Message<textarea name="message"></textarea></label>
+          <div class="modal-actions">
+            <button type="submit" class="btn-primary">Send Request</button>
+            <button type="button" class="btn-ghost" id="cancelModal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="pricing-footer">
+      <p class="muted">Prices shown in NGN. Taxes may apply. Annual pricing gives discount on monthly total.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
