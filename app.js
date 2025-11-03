@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     pro: 55000,
   };
 
-  // Annual = 18% discount
-  const discountRate = 0.18;
+  // Annual = 10 months pricing (pay for 10 months, get 12)
+  const annualMonths = 10;
 
   const formatNGN = (value) =>
     "₦" + value.toLocaleString("en-NG", { maximumFractionDigits: 0 });
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const key in prices) {
       const base = monthly[key];
       const priceValue = isAnnual
-        ? Math.round(base * 12 * (1 - discountRate))
+        ? Math.round(base * annualMonths)
         : base;
 
       const period = isAnnual ? "/yr" : "/mo";
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Add a fade effect for smooth switching
       prices[key].classList.add("fade-out");
       setTimeout(() => {
-        prices[key].innerHTML = ${formatNGN(priceValue)}<span class="period">${period}</span>;
+        prices[key].innerHTML = `${formatNGN(priceValue)}<span class="period">${period}</span>`;
         prices[key].classList.remove("fade-out");
         prices[key].classList.add("fade-in");
         setTimeout(() => prices[key].classList.remove("fade-in"), 300);
